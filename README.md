@@ -35,7 +35,12 @@ Para adicionar suas próprias referências:
 Este arquivo PDF é uma apresentação modelo gerada a partir do template. Ele demonstra a estrutura básica, o estilo visual e o uso dos recursos do template.
 
 
+## Contribuições e Sugestões
 
+Sua contribuição é muito bem-vinda!
 
+Se você encontrar algum erro, quiser sugerir correções, adicionar novos exemplos ou estilos, fique à vontade para abrir uma **issue** aqui no repositório.
+
+---
 Criado por Leanderson André — Universidade da Região de Joinville (Univille).
 
