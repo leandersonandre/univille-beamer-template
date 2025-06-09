@@ -8,7 +8,9 @@ Este repositório contém meu template customizado para a classe Beamer do LaTeX
   <img src="capa.png" alt="Capa da apresentação" width="250" />
   <img src="algoritmos.png" alt="Algoritmo" width="250" />
   <img src="blocos.png" alt="Algoritmo" width="250" />
+  <img src="tabelas.png" alt="Algoritmo" width="250" />
   <img src="referencias.png" alt="Algoritmo" width="250" />
+  <img src="final.png" alt="Algoritmo" width="250" />
 </div>
 
 
