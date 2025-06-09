@@ -4,9 +4,12 @@ Template pessoal para apresentações em Beamer.
 
 Este repositório contém meu template customizado para a classe Beamer do LaTeX, usado para criar apresentações com estilo próprio e formato adaptado às minhas necessidades acadêmicas e profissionais.
 
-![Capa da apresentação](capa.png)
-
-![Algoritmo](algoritmos.png)
+<div style="display: flex; gap: 10px;">
+  <img src="capa.png" alt="Capa da apresentação" width="150" />
+  <img src="algoritmos.png" alt="Algoritmo" width="150" />
+  <img src="blocos.png" alt="Algoritmo" width="150" />
+  <img src="referencias.png" alt="Algoritmo" width="150" />
+</div>
 
 
 ## Como usar
