@@ -1,0 +1,342 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{listings, xcolor}
+\usepackage{lstautogobble}
+\usepackage{colortbl} 
+ \usepackage{booktabs}
+\usetheme{Madrid}
+\usepackage{ragged2e}
+\usepackage{soul}          % para \hl (highlight)
+\usepackage[normalem]{ulem}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+
+\setbeamertemplate{title page}[default][colsep=-0bp,rounded=false]
+\setbeamertemplate{frametitle}[default][colsep=-4bp,rounded=false,shadow=false]
+\setbeamertemplate{blocks}[default]
+\setbeamertemplate{headline}[shadow=false]
+\setbeamertemplate{subsection in head}[shadow=false]
+\setbeamertemplate{section in head}[shadow=false]
+\setbeamertemplate{beamercolorbox}[shadow=false]
+
+% \usepackage{beamerthemesplit} // Activate for custom appearance
+\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+\setbeamercolor{structure}{fg=ao(english)}
+\definecolor{darkgreen}{rgb}{0,.5,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+
+\renewcommand{\lstlistingname}{Algoritmo}
+\lstdefinestyle{myJavaStyle}{
+  language=Java,
+  numbers=left,
+  firstnumber=1,
+  stepnumber=1,
+  numbersep=10pt,
+  tabsize=4,
+  showspaces=false,
+  showstringspaces=false,
+  keywordstyle=\color{blue}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  commentstyle=\color{darkgreen}\ttfamily,
+  basicstyle=\ttfamily,
+  breaklines=true,
+  autogobble=true,
+  backgroundcolor=\color{gray!10!white},    
+  numbersep=5pt, 
+  numberstyle=\tiny\color{codegray},  
+  escapeinside={(*@}{@*)},
+  literate=
+    {á}{{\'a}}1
+    {à}{{\`a}}1
+    {ã}{{\~a}}1
+    {â}{{\^a}}1
+    {é}{{\'e}}1
+    {ê}{{\^e}}1
+    {í}{{\'i}}1
+    {ó}{{\'o}}1
+    {ô}{{\^o}}1
+    {õ}{{\~o}}1
+    {ú}{{\'u}}1
+    {ç}{{\c{c}}}1
+    {Á}{{\'A}}1
+    {À}{{\`A}}1
+    {Ã}{{\~A}}1
+    {Â}{{\^A}}1
+    {É}{{\'E}}1
+    {Ê}{{\^E}}1
+    {Í}{{\'I}}1
+    {Ó}{{\'O}}1
+    {Ô}{{\^O}}1
+    {Õ}{{\~O}}1
+    {Ú}{{\'U}}1
+    {Ç}{{\c{C}}}1
+}
+\lstset{basicstyle=footnotesize,style=myJavaStyle}
+
+\setbeamertemplate{endpage}{%
+    \begin{frame}
+        \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{univille_logo.png}
+   \end{figure}
+   \begin{center}
+   Prof. MSc. Leanderson André\\
+   leandersonandre@univille.br
+   \end{center}
+   \end{frame}
+}
+
+\title[Minha Apresentação no Rodapé]{Título da Minha Apresentação}
+\subtitle{Meu Subtítulo da minha Apresentação}
+\author[]{Prof. MSc. Leanderson André}
+\institute[]{\inst{} Universidade da Região de Joinville }
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section[Outline]{}
+\frame{
+\frametitle{Agenda}
+\tableofcontents
+}
+
+%\section{Introduction}
+%\subsection{Overview of the Beamer Class}
+
+
+\section{Beamer}
+\begin{frame}[fragile]{Beamer}
+
+\textbf{Beamer} é uma classe de documento do LaTeX usada para criar apresentações em slides de alta qualidade tipográfica, semelhante ao PowerPoint ou Keynote, mas com foco em clareza, elegância e controle completo do conteúdo via código.
+
+
+
+Tutorial em \url{https://www.overleaf.com/learn/latex/Beamer_Presentations%3A_A_Tutorial_for_Beginners_(Part_1)—Getting_Started}.
+
+\end{frame}
+
+
+\subsection{Blocos e listas}
+\begin{frame}[fragile]{Blocos}
+
+\begin{block}{Título do bloco}
+Conteúto do bloco.
+
+\end{block}
+
+
+
+\begin{alertblock}{Título do bloco de alerta}
+Conteúto do bloco.
+
+\end{alertblock}
+
+\begin{itemize}
+\item Item da lista
+\item Item da lista
+\item Item da lista
+\end{itemize}
+
+\end{frame}
+
+
+\subsection{Elementos textuais}
+\begin{frame}[fragile]{Elementos textuais}
+
+\textbf{Negrito} \\
+\textit{Itálico} \\
+\underline{Sublinhado} \\
+Texto com subscrito: $H_2O$ \\
+Texto com sobrescrito: $x^2 + y^2 = z^2$ \\
+Texto \sout{riscado} \\
+Texto normal e \colorbox{yellow}{texto destacado com fundo amarelo} no meio da frase. \\
+Texto em \texttt{monoespaçado}
+
+\end{frame}
+
+\begin{frame}{Exemplo de colunas}
+
+\begin{columns}[T] % [T] alinha ao topo
+  \column{0.5\textwidth}
+  \textbf{Coluna 1:}
+  \begin{itemize}
+    \item Item 1
+    \item Item 2
+    \item Item 3
+  \end{itemize}
+
+  \column{0.5\textwidth}
+  \textbf{Coluna 2:}
+  \begin{itemize}
+    \item Outro item A
+    \item Outro item B
+  \end{itemize}
+  
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Blocos lado a lado}
+
+\begin{columns}
+  \column{0.48\textwidth}
+  \begin{block}{Bloco 1}
+  Conteúdo do bloco 1.
+  \end{block}
+
+  \column{0.48\textwidth}
+  \begin{alertblock}{Bloco 2}
+  Conteúdo do bloco 2.
+  \end{alertblock}
+\end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Aparecer itens progressivamente}
+
+\begin{itemize}
+  \item<1-> Primeiro item
+  \item<2-> Segundo item
+  \item<3-> Terceiro item
+\end{itemize}
+
+\end{frame}
+
+\section{Figuras}
+\begin{frame}[fragile]{Exemplo de Figura}
+
+Utilize o pacote figure. Informe o nome e o tamanho da imagem.
+
+Tutorial em \url{https://www.overleaf.com/learn/latex/Inserting_Images}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{univille_logo.png}
+\caption{Título da Figura}
+\end{figure}
+
+\end{frame}
+
+\section{Algoritmos}
+\begin{frame}[fragile]{Exemplo de código}\include{bibliografia}
+
+No pacote de algoritmos (lstlisting), o frame deve ter o comando [fragile].
+É possível colocar o hightlight conforme a linguagem de programação.
+Tutorial em \url{https://www.overleaf.com/learn/latex/Code_listing}.
+
+\begin{lstlisting}[caption=Percorrer por todas as posições da matriz]
+int m = { {1, 2, 3 }, {4, 5, 6}, {7, 8, 9}};
+// Estrutura de repetição clássica
+// Necessário utilizar a posição no vetor
+for(int i =0; i < m.length; i++){
+   for(int j =0; j < m[i].length; j++){
+     System.out.println(m[i][j]);
+   }
+}
+\end{lstlisting}
+
+\end{frame}
+
+
+\section{Tabelas}
+\begin{frame}[fragile]{Exemplo de tabela}
+
+No site \url{https://www.tablesgenerator.com} possui um gerador de tabelas em latex.
+
+\begin{table}[]
+\centering
+\begin{tabular}{llll}
+\hline
+1 & 2 & 3 & 4             \\
+5 & 6 & 7 & 8             \\
+9 & 10 & 11 & 12             \\
+13 & 14 & 15 & 16             \\ \hline
+\end{tabular}
+\caption{Minha tabela}
+\end{table}
+
+
+\end{frame}
+
+\begin{frame}{Tabela com booktabs}
+
+\centering
+\begin{tabular}{lcr}
+\toprule
+Nome & Idade & Nota \\
+\midrule
+Ana & 22 & 8.5 \\
+Bruno & 25 & 9.0 \\
+Carlos & 20 & 7.8 \\
+\bottomrule
+\end{tabular}
+
+\end{frame}
+
+
+
+\section{Desenho com TikZ}
+\begin{frame}
+\frametitle{Desenho simples com TikZ}
+
+Tutorial em \url{https://www.overleaf.com/learn/latex/TikZ_package}. Peça ao chatgtp gerar o código.
+
+\begin{center}
+\begin{tikzpicture}
+  % Desenha um círculo azul
+  \draw[blue, thick] (0,0) circle (2cm);
+
+  % Desenha um quadrado vermelho
+  \draw[red, thick] (-1,-1) rectangle (1,1);
+
+  % Texto no centro
+  \node at (0,0) {TikZ};
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+
+\section{Referências}
+\begin{frame}[fragile]{Como utilizar as Referências}
+
+Para citar um artigo \cite{bloch2017effective}, utilize o comando \textbackslash cite. Confere o arquivo biliografia.bib. Neste arquivo você adiciona as referências. Utilize o google scholar para obter a referência no formato bibtex ou peça ao chatgpt.
+
+\begin{block}{Prompt}
+Gere a bibliografia em formato bibtex do \textcolor{red}{ livro effective java de joshua bosh}. Me dê apenas a bibliografia.	
+\end{block}
+
+Por padrão, é apresentado apenas as referências citadas. Caso desejar utilize o comando \textbackslash nocite\{*\} para mostrar todas as referências no arquivo. Confira o código fonte do próximo slide.
+
+
+\end{frame}
+
+\begin{frame}{Citação}
+
+\begin{quote}
+``Programs must be written for people to read, and only incidentally for machines to execute.'' \\
+\hfill --- Harold Abelson, \textit{Structure and Interpretation of Computer Programs}
+\end{quote}
+
+\end{frame}
+
+
+\begin{frame}[fragile]{Referências}
+
+        \bibliographystyle{amsalpha}
+        \bibliography{bibliografia.bib}
+        \nocite{*}
+
+\end{frame}
+
+\usebeamertemplate{endpage}
+
+\end{document}
